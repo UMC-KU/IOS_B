@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AutoLayout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pih-Wa-1he">
+                                <rect key="frame" x="112.5" y="44" width="189" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2My-kW-eRx">
+                                <rect key="frame" x="179.5" y="197" width="55" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="9fw-3h-2Di"/>
+                                    <constraint firstAttribute="height" constant="55" id="nFO-52-ydI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="m5p-cm-RUO">
+                                <rect key="frame" x="179.5" y="421" width="55" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="KjN-ta-Bny"/>
+                                    <constraint firstAttribute="height" constant="55" id="g2K-0l-dK0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="otr-EW-gva">
+                                <rect key="frame" x="283" y="421" width="55" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="Vm4-vA-pux"/>
+                                    <constraint firstAttribute="height" constant="55" id="lsC-xX-SdH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Zzu-Rf-9Ov">
+                                <rect key="frame" x="76" y="421" width="55" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ZNk-h3-DxS"/>
+                                    <constraint firstAttribute="width" constant="55" id="iW7-hW-WhR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pPm-jH-W5E">
+                                <rect key="frame" x="179.5" y="645" width="55" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="cf6-m3-PHR"/>
+                                    <constraint firstAttribute="width" constant="55" id="mhl-K2-Yzg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pih-Wa-1he" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Zx-hi-i3U"/>
+                            <constraint firstItem="m5p-cm-RUO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3p5-o0-Nz2"/>
+                            <constraint firstItem="m5p-cm-RUO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Ho-2b-A3Y"/>
+                            <constraint firstItem="otr-EW-gva" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="81U-d6-Bv0"/>
+                            <constraint firstItem="2My-kW-eRx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E1b-ou-YWl"/>
+                            <constraint firstItem="2My-kW-eRx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="JKh-D4-9bY"/>
+                            <constraint firstItem="Zzu-Rf-9Ov" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="Pev-zd-ng7"/>
+                            <constraint firstItem="pPm-jH-W5E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="Qtn-Ki-I99"/>
+                            <constraint firstItem="Pih-Wa-1he" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ri4-LS-VKg"/>
+                            <constraint firstItem="Zzu-Rf-9Ov" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XbO-zI-mNS"/>
+                            <constraint firstItem="otr-EW-gva" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.5" id="aQ8-ct-9kX"/>
+                            <constraint firstItem="pPm-jH-W5E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g9y-c2-X1e"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="67.633928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
