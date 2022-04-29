@@ -9,7 +9,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,8 +21,6 @@ class HomeViewController: UIViewController {
         let storyNib = UINib(nibName: "StoryTableViewCell", bundle: nil)
         tableView.register(storyNib, forCellReuseIdentifier: "StoryTableViewCell")
     }
-    
-
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -31,7 +28,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 10
     }
 
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "StoryTableViewCell", for: indexPath) as? StoryTableViewCell else {
@@ -60,7 +56,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let tableViewCell = cell as? StoryTableViewCell else {
             return
         }
-        
         tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
     }
 }

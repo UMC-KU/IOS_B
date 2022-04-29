@@ -9,27 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    var delegate : ChangeLabelDelegate?
     
     @IBOutlet weak var label: UILabel!
     
-    @IBAction func button1(_ sender: Any) {
-        guard let nextVC = storyboard?.instantiateViewController(withIdentifier: "SecondVC") as? SecondViewController else {
-            return
-        }
-        nextVC.previousViewController = self
-        nextVC.modalPresentationStyle = .fullScreen
-        present(nextVC, animated: true, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let title = UILabel()
+        title.text = "Instagram"
+        title.textColor = .black
+        title.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "paperplane.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal), for: .normal)
+        
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: title)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        // Do any additional setup after loading the view.
     }
     
 }
 
-protocol ChangeLabelDelegate {
-    func doChange()
-}
 
