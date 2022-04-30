@@ -80,7 +80,8 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.pushViewController(registerViewController, animated:true)
         
-        registerViewController.userInfo={[weak self](userInfo) in
+        //ARC -> 강한참조 / 약한 참조 (참조 해제 -> 메모리 해제)
+        registerViewController.userInfo={[weak self](userInfo) in //익명함수에 대한 정의를 여기서 내림
             print(userInfo)
             self?.userInfo=userInfo
         }
@@ -103,6 +104,6 @@ class LoginViewController: UIViewController {
         
         let attributes=generateButtonAttribute(self.registerButton, texts: text1,text2, fonts: font1,font2, colors: color1,color2)
         
-        self.registerButton.setAttributedTitle(attributes,for:.normal)
+        self.registerButton.setAttributedTitle(attributes,for:.normal) //for은 버튼의 어떤 상태에서 적용할 것이지
     }
 }
