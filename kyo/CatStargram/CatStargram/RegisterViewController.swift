@@ -15,10 +15,11 @@ class RegisterViewController: UIViewController {
     var nickname:String=""
     var password:String=""
     
-    var userInfo: ((UserInfo) -> Void)?
+    var userInfo: ((UserInfo) -> Void)? //익명함수? 클로져? 인터페이스처럼 사용하는 용도인듯
     
     var isValidEmail=false{
         didSet{ //프로퍼티 옵저버
+            //변수에 값이 setting이 되면 이 코드를 실행하겠다는 의미
             self.validateUserInfo()
         }
     }
@@ -64,7 +65,7 @@ class RegisterViewController: UIViewController {
         setupAttribute()
         
         //bug fix
-        self.navigationController?.interactivePopGestureRecognizer?.delegate=nil
+        self.navigationController?.interactivePopGestureRecognizer?.delegate=nil //네비게이션 컨트롤러가 가지고 있어서 막혀있는걸 풀어주는 것인 듯
         // Do any additional setup after loading the view.
     }
     
@@ -119,6 +120,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    //회원정보 유효성 검사 --> 버튼 색깔 업데이트
     private func validateUserInfo(){
         if (isValidEmail && isValidName && isValidNickname && isValidPassword){
             
@@ -137,7 +139,7 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupAttribute(){
-        let text1="계정이 없으신가요?"
+        let text1="계정이 있으신가요?"
         let text2="로그인"
         
         let font1=UIFont.systemFont(ofSize: 13)
@@ -155,7 +157,7 @@ class RegisterViewController: UIViewController {
 
 //정규표현식
 extension String{
-    //대문자, 소문자, 특수뭄ㄴ자, 숫자 8자 이상일 때, -> True
+    //대문자, 소문자, 특수문자, 숫자 8자 이상일 때, -> True
     func isValidPassword() -> Bool{
         let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}"
         let passwordValidation=NSPredicate.init(format:"SELF MATCHES %@",regularExpression)
@@ -163,6 +165,7 @@ extension String{
         return passwordValidation.evaluate(with: self)
     }
     
+    // @ 포함 & 2글자 이상인지
     func isValidEmail() -> Bool{
         let emailRegEx="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest=NSPredicate(format:"SELF MATCHES %@", emailRegEx)
