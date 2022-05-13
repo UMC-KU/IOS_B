@@ -427,6 +427,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="ic_home_upload"/>
+                                        <connections>
+                                            <action selector="buttonGoAlbum:" destination="Fy2-1F-4a2" eventType="touchUpInside" id="6A5-rx-Ayk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnw-mt-8Mu">
                                         <rect key="frame" x="310" y="12.666666666666664" width="25" height="25"/>
@@ -470,7 +473,7 @@
                             <constraint firstItem="lQp-3g-79p" firstAttribute="top" secondItem="tuG-xz-yhQ" secondAttribute="top" id="rep-rr-piw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="6yt-mM-RX3"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="6yt-mM-RX3"/>
                     <connections>
                         <outlet property="tableView" destination="tLk-Mm-aeR" id="5P1-lU-83w"/>
                     </connections>
@@ -501,7 +504,7 @@
         <scene sceneID="Vaa-JW-15H">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D8o-pK-Ofx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="deM-eY-Kz5"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="deM-eY-Kz5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A5J-VW-92T">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -520,11 +523,13 @@
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="f.square.fill" catalog="system" width="128" height="114"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="ic_catstagram_logo" width="476" height="96"/>
         <image name="ic_home_heart" width="512" height="512"/>
         <image name="ic_home_send" width="512" height="512"/>
         <image name="ic_home_upload" width="512" height="512"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

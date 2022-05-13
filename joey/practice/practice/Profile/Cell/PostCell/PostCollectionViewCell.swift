@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PostCollectionViewCell: UICollectionViewCell {
     static let identifier = "PostCollectionViewCell"
@@ -17,8 +18,13 @@ class PostCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    public func setUpData() {
+    public func setUpData(_ imageURLString: String?) {
         
+        guard let imageURLString = imageURLString else { return }
+        if let url = URL(string: imageURLString) {
+            postImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "photo"))
+        }
+    
     }
 
 }

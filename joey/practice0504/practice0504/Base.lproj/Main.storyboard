@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eCc-Ef-sFh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="ZBq-YK-Ino">
+            <objects>
+                <viewController id="dze-nj-OKh" customClass="MyViewController" customModule="practice0504" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0r1-vj-D2V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZP-wh-Mmb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qx4-JS-hiX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qx4-JS-hiX" firstAttribute="bottom" secondItem="sZP-wh-Mmb" secondAttribute="bottom" id="98T-aP-Rfz"/>
+                            <constraint firstItem="sZP-wh-Mmb" firstAttribute="leading" secondItem="qx4-JS-hiX" secondAttribute="leading" id="L4a-WW-x8i"/>
+                            <constraint firstItem="sZP-wh-Mmb" firstAttribute="top" secondItem="qx4-JS-hiX" secondAttribute="top" id="R2c-r6-XOA"/>
+                            <constraint firstItem="qx4-JS-hiX" firstAttribute="trailing" secondItem="sZP-wh-Mmb" secondAttribute="trailing" id="hS1-Un-1Ac"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" selectedImage="newspaper" catalog="system" id="VBx-ki-gQP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K62-tJ-vrM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-578" y="350"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="v7I-E0-ikf">
+            <objects>
+                <viewController id="7Aa-vh-V3U" customClass="HeartViewController" customModule="practice0504" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vrb-B0-4cn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5X-1R-XnR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hDB-1D-cDV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hDB-1D-cDV" firstAttribute="trailing" secondItem="f5X-1R-XnR" secondAttribute="trailing" id="6Zu-K1-c4y"/>
+                            <constraint firstItem="f5X-1R-XnR" firstAttribute="top" secondItem="hDB-1D-cDV" secondAttribute="top" id="KBh-JL-23b"/>
+                            <constraint firstItem="f5X-1R-XnR" firstAttribute="leading" secondItem="hDB-1D-cDV" secondAttribute="leading" id="cpb-1L-O9I"/>
+                            <constraint firstItem="hDB-1D-cDV" firstAttribute="bottom" secondItem="f5X-1R-XnR" secondAttribute="bottom" id="e7P-2q-BAo"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" selectedImage="heart" catalog="system" id="4vi-Go-vXW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CcJ-MS-enA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-578" y="-1185"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Y4W-RK-Pav">
+            <objects>
+                <tabBarController id="eCc-Ef-sFh" customClass="TabBarController" customModule="practice0504" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zIt-jC-Ybg" customClass="AppTabBar" customModule="practice0504">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7Aa-vh-V3U" kind="relationship" relationship="viewControllers" id="w4V-XS-gIh"/>
+                        <segue destination="dze-nj-OKh" kind="relationship" relationship="viewControllers" id="Tdt-Pq-3ne"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="gLN-7X-DPq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVH-xy-dlX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1468" y="-473"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="practice0504" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NxG-tu-N5d">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NxG-tu-N5d" secondAttribute="bottom" id="Fna-Ff-oeC"/>
+                            <constraint firstItem="NxG-tu-N5d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HU7-ds-VmG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NxG-tu-N5d" secondAttribute="trailing" id="gHb-hP-dsi"/>
+                            <constraint firstItem="NxG-tu-N5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lpe-r8-Hmc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="WEv-QW-qnu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-578" y="-447"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="zIt-jC-Ybg">
+            <size key="intrinsicContentSize" width="-1" height="83"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -7,19 +7,48 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: - PROPERTIES
     @IBOutlet weak var profileCollectionView: UICollectionView!
+    
+    var userPosts: [GetUserPost]? {
+        didSet { self.profileCollectionView.reloadData() }
+    }
+    
+    var deletedIndex: Int?
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         // Do any additional setup after loading the view.
+        
+        setUpData()
+
     }
     
     //MARK: - Actions
+    @objc
+    func didLongPressCell(gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state != .began { return }
+        
+        let position = gestureRecognizer.location(in: profileCollectionView)
+        
+        if let indexPath = profileCollectionView?.indexPathForItem(at: position) {
+            print("삭제합니다 ",indexPath.item)
+            
+            guard let userPosts = self.userPosts else { return }
+            let cellData = userPosts[indexPath.item]
+            self.deletedIndex = indexPath.item
+            
+            if let postIdx = cellData.postIdx {
+                UserFeedDataManager().deleteUserFeed(self, postIdx)
+            }
+
+        }
+            
+    }
     
     
     //MARK: - Helpers
@@ -36,6 +65,19 @@ class ProfileViewController: UIViewController {
             UINib(nibName: "PostCollectionViewCell",
                   bundle: nil),
             forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
+        
+        let gesture = UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(didLongPressCell(gestureRecognizer:)))
+        gesture.minimumPressDuration = 0.7
+        gesture.delegate = self
+        gesture.delaysTouchesBegan = true
+        profileCollectionView.addGestureRecognizer(gesture)
+        
+    }
+    
+    private func setUpData() {
+        UserFeedDataManager().getUserFeed(self)
     }
 }
 
@@ -51,7 +93,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         case 0:
             return 1
         default:
-            return 24
+            return userPosts?.count ?? 0
         }
     }
     
@@ -72,7 +114,11 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
                 for: indexPath) as? PostCollectionViewCell else {
                     return UICollectionViewCell()
                 }
-//            cell.setUpData()
+            
+            if let cellData = self.userPosts {
+                cell.setUpData(cellData[indexPath.item].postImgUrl)
+            }
+
             return cell
         }
         
@@ -115,3 +161,18 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+
+//MARK: - API 통신
+extension ProfileViewController {
+    func successFeedAPI(_ result: UserFeedModel) {
+        self.userPosts = result.result?.getUserPosts
+    }
+    
+    func successDeletePostAPI(_ isSuccess: Bool) {
+        guard isSuccess else { return }
+        
+        if let deletedIndex = self.deletedIndex {
+            self.userPosts?.remove(at: deletedIndex)
+        }
+    }
+}
