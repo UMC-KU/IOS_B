@@ -41,9 +41,7 @@ class LoginViewController: UIViewController {
         // 회원가입 정보를 = textField
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "TabbarVC") as! UITabBarController
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-        
+        self.view.window?.windowScene?.keyWindow?.rootViewController = vc
 //        guard let userInfo = self.userInfo else { return }
 //        if (userInfo.email == self.email && userInfo.password == self.password) {
 //            let vc = storyboard?.instantiateViewController(withIdentifier: "TabbarVC") as! UITabBarController
